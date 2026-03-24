@@ -1,0 +1,6 @@
+{
+    "dependencies": {
+        "fastify": "^5.8.4",
+        "node-fetch": "^2.6.1"
+    }
+}
