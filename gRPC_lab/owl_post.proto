@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package owlpost;
+
+service OwlPost {
+  // 請完成 client 和 server 溝通所需的 proto 設定
+  // Hint, 格式: rpc (messageA) returns (messageB)
+  // ==== 請完成實作 (以下) ====
+
+  rpc sendLetter (LetterRequest) returns (LetterResponse);
+
+  // ==== 請完成實作 (以上) ====
+  
+  // 以下這是 tracker 的範例，可用來參考
+  rpc TrackLetter (TrackRequest) returns (TrackResponse);
+
+}
+
+message LetterRequest {
+  string studentName = 1;
+}
+
+message LetterResponse {
+  string studentName = 1;
+  string house = 2;
+  string trackingId = 3;
+}
+
+// 請參考 server.js 和 track.js 來完成 
+// TrackRequest 和 TrackResponse 的 proto 部分
+message TrackRequest {
+  // ==== 請完成實作 (以下) ====
+  string pickupCode = 1;
+  // ==== 請完成實作 (以上) ====
+}
+
+message TrackResponse {
+  // ==== 請完成實作 (以下) ====
+  string studentName = 1;
+  string house = 2;
+  string status = 3;
+  // ==== 請完成實作 (以上) ====
+}
